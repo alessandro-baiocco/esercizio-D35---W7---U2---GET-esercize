@@ -1,6 +1,6 @@
 let postoProdotti = document.querySelector("#postoProdotti");
 let depositoUrl = "https://striveschool-api.herokuapp.com/api/product";
-
+let spin = document.querySelector(".spinner-grow");
 const prendiDati = async () => {
   try {
     fetch(depositoUrl, {
@@ -17,7 +17,6 @@ const prendiDati = async () => {
           cartaShop.classList.add("col-xl-2");
           cartaShop.classList.add("col-md-4");
           cartaShop.classList.add("col-6");
-          cartaShop.classList.add("card");
           cartaShop.classList.add("p-0");
           cartaShop.innerHTML = `
                 <img src="${element.imageUrl}" class="card-img-top" alt="${element.name} "height = 124px">
@@ -30,6 +29,7 @@ const prendiDati = async () => {
                 </div>
                 </div>`;
           postoProdotti.appendChild(cartaShop);
+          spin.classList.add("d-none");
         });
       })
       .catch((err) => console.log(err));

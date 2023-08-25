@@ -72,7 +72,7 @@ const creaOggetto = async (e) => {
 };
 const eliminaOggetto = async (e) => {
   e.preventDefault();
-  const accepted = confirm("sei sicuro di volerlo cancellare? guarda con torni più indietro");
+  const accepted = confirm("sei sicuro di volerlo cancellare? guarda che non torni più indietro");
   if (accepted) {
     const resp = await fetch(url, {
       method: "DELETE",

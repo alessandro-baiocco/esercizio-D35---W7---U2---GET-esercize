@@ -17,7 +17,6 @@ window.onload = async () => {
     })
       .then((strProd) => strProd.json())
       .then((product) => {
-        console.log(product);
         coperta.style = `background-image:url("${product.imageUrl}")`;
         titolo.innerText = `${product.name.toUpperCase()}`;
         description.innerText = `genere : ${product.description}`;
