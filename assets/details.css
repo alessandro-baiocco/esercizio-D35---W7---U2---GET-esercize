@@ -1,0 +1,10 @@
+.copertina {
+  height: 20vh;
+  width: 100%;
+  background-position: center;
+}
+
+header {
+  padding: 0px;
+  margin: 0;
+}
