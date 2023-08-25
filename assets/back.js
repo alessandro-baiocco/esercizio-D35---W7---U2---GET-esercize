@@ -1,4 +1,3 @@
-//   let depositoUrl = "https://striveschool-api.herokuapp.com/api/product";
 const productId = new URLSearchParams(window.location.search).get("ProdId");
 const url = productId
   ? `https://striveschool-api.herokuapp.com/api/product/${productId}`
