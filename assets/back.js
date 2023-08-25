@@ -65,6 +65,7 @@ const creaOggetto = async (e) => {
         campiInput[3].value = "";
         campiInput[4].value = "";
       }
+      alert("operazione eseguita con successo");
     });
   } else {
     alert("inserisci qualcosa nei campi");
