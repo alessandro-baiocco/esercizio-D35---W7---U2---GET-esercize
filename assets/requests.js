@@ -104,14 +104,19 @@ const prendiDati = async () => {
           cartaShop.classList.add("col-md-4");
           cartaShop.classList.add("col-6");
           cartaShop.classList.add("p-0");
+          cartaShop.classList.add("mt-2");
           cartaShop.innerHTML = `
                 <img src="${element.imageUrl}" class="card-img-top" alt="${element.name} "height = 124px">
-                <div class="card-body">
+                <div class="card-body p-1 d-flex flex-column">
+                <div>
                 <h5 class="card-title">${element.name}</h5>
                 <p class="card-text">${element.description}</p>
                 <p class="card-text">price:${element.price}$</p>
-                <a class="btn btn-info mb-2" href = "details.html?ProdId=${element._id}">Scopri di più</a>
-                <a class="btn btn-primary my-2" href = "backoffice.html?ProdId=${element._id}">modifica</a>
+                </div>
+                <div class = "d-flex mt-auto">
+                <a class="btn btn-info me-auto p-2" href = "details.html?ProdId=${element._id}">Scopri di più</a>
+                <a class="btn btn-primary p-2" href = "backoffice.html?ProdId=${element._id}">modifica</a>
+                </div>
                 </div>
                 </div>`;
           postoProdotti.appendChild(cartaShop);
