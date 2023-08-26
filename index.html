@@ -44,8 +44,21 @@
     <main>
       <div class="container mt-4 sotto">
         <div id="postoProdotti" class="row"></div>
-        <div class="spinner-grow text-info card col-xl-2 col-md-4 col-6" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div class="card col-xl-2 col-md-4 col-6" id="allSpinner">
+          <div class="spinner-grow text-info card-img-top" style="width: 12rem; height: 12rem" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div
+            class="spinner-grow text-info card-body d-flex justify-content-center"
+            tyle="width: 6rem; height: 6rem;"
+            role="status"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
         </div>
       </div>
     </main>
