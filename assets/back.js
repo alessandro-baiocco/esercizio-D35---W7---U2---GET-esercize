@@ -13,7 +13,7 @@ window.onload = async () => {
     },
   }).then((strprod) => {
     if (strprod.status === 401) {
-      console.log("la richiesta non è stata trovata");
+      console.log("la richiesta non è stata autorizzata");
       card.innerHTML = `<div class="card text-center">
         <div class="card-header">
         STOP!
@@ -111,6 +111,7 @@ window.onload = async () => {
         <label for="prezzo">prezzo</label>
         <input type="number" placeholder="prezzo" class="form-control mb-2" id="prezzo" required />
 
+        <input type = "button" class = "btnReset btn btn-info onclick="resetform(event)" value = "resetta form" />
         <button type="submit" onclick="creaOggetto(event)" id="creaOModifica" class="btn btn-info me-2">
           crea oggetto
         </button>
@@ -119,7 +120,6 @@ window.onload = async () => {
     </form>`;
       let eliminate = document.getElementById("delete");
       let modifiOcrea = document.getElementById("creaOModifica");
-
       let campiInput = document.getElementsByTagName("input");
       let form = document.querySelector("form");
     }
@@ -221,7 +221,8 @@ window.onload = async () => {
   
           <label for="prezzo">prezzo</label>
           <input type="number" placeholder="prezzo" class="form-control mb-2" id="prezzo" required />
-  
+          
+        
           <button type="submit" onclick="creaOggetto(event)" id="creaOModifica" class="btn btn-info me-2">
             crea oggetto
           </button>
@@ -234,7 +235,7 @@ window.onload = async () => {
         let campiInput = document.getElementsByTagName("input");
         let form = document.querySelector("form");
         eliminate.classList.remove("d-none");
-        console.log(product);
+
         modifiOcrea.innerText = "modifica l'oggetto";
         (campiInput[0].value = product.name),
           (campiInput[1].value = product.description),
@@ -311,5 +312,16 @@ const eliminaOggetto = async (e) => {
       });
   } else {
     alert("operazione annullata");
+  }
+};
+
+const resetform = (e) => {
+  e.preventDefault();
+  const resetMaybe = confirm("vuoi resettare il form? è una rottura di scatole riscrivere tutto");
+  if (resetMaybe) {
+    let campiInput = document.getElementsByTagName("input");
+    for (let i = 0; i < campiInput.length; i++) {
+      campiInput[i].value = "";
+    }
   }
 };

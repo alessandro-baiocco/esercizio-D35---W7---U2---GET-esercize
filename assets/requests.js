@@ -125,7 +125,22 @@ const prendiDati = async () => {
           postoProdotti.appendChild(cartaShop);
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        main.innerHTML = `<div class="card text-center">
+        <div class="card-header">
+          fatal error
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">???</h5>
+          <p class="card-text">l'indirizzo che stai contattando è errato</p>
+          <a href="https://www.google.com/webhp?hl=it&sa=X&ved=0ahUKEwjzjMPbvvqAAxW5_7sIHWudAREQPAgI" class="btn btn-primary">torna indietro</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          ???
+        </div>
+      </div>`;
+      });
   } catch (error) {
     console.log(error);
   }
